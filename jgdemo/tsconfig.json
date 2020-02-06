@@ -10,6 +10,7 @@
     "baseUrl": ".",
     "noImplicitAny": false,
     "strict": true,
+    "experimentalDecorators":true,
     "paths": {
       "@/*": ["src/*"],
       "@tmp/*": ["src/pages/.umi/*"]

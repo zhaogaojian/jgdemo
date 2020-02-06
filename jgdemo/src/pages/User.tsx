@@ -2,7 +2,6 @@
 import React from 'react';
 import { Button,Input} from 'antd';
 import {connect} from 'dva';
-
 class User extends React.Component{ 
   constructor(props) {
     super(props);
@@ -12,7 +11,7 @@ class User extends React.Component{
     console.log(this.props);
     return (
       <div>用户管理
-        <div>姓名:{this.props.UserInfo.username}</div>
+        <div>姓名:{(this.props as any).UserInfo.username}</div>
         <Button type="primary" style={{marginTop:10,width:300}} onClick={this.handleReadFromSrvClick}>从服务端读取</Button>
         <Button  style={{marginTop:10,width:300}} onClick={this.handleModifyClick}>修改</Button>
       </div>
@@ -30,8 +29,8 @@ class User extends React.Component{
       UserInfo:{
         username:"张三2"
     }
-    }
-    this.props.dispatch({
+    };
+    (this.props as any).dispatch({
       type:"User/updateUserState",
       payload:userInfo
     })

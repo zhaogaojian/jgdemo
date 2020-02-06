@@ -1,6 +1,6 @@
 
 export default {
-    '/user/getuserinfo': {UserInfo:{
+    '/api/user/getuserinfo': {UserInfo:{
         username:"李四"
     }}
   };
