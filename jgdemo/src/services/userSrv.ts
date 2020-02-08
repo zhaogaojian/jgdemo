@@ -1,6 +1,6 @@
 
 export async function query(): Promise<any> {
-    return request('http://localhost:8000/api/user/getuserinfo');
+    return request('/api/user/getuserinfo');
   }
 
 import axios from "axios"
