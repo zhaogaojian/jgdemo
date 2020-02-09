@@ -15,9 +15,9 @@ const config: IConfig =  {
        path: '/mainfrm',
        component: '../layouts/BasicLayout',
        routes: [
-        { path: '/mainfrm', component: '../pages/User' },
-        { path: '/mainfrm/user', component: '../pages/User' },
-        { path: '/mainfrm/userrole', component: '../pages/UserRole' },
+        { path: '/mainfrm', component: '../pages/user/User' },
+        { path: '/mainfrm/user', component: '../pages/user/User' },
+        { path: '/mainfrm/userrole', component: '../pages/user/UserRole' },
       ]
     }
     

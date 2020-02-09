@@ -47,6 +47,18 @@ render(){
         )}
         />
         
+        <Column 
+        title="头像" 
+        dataIndex="avatar" 
+        key="avatar" 
+        width="200px"
+        fixed="right"
+        render={t => (
+          <span>
+          {<img src={t} style={{width:"100px",height:"100px"}}></img>}
+          </span>
+      )}
+        />
         <Column
         title="Action"
         key="action"
@@ -58,18 +70,6 @@ render(){
             <a>Delete</a>
             </span>
         )}
-        />
-        <Column 
-        title="头像" 
-        dataIndex="avatar" 
-        key="avatar" 
-        width="200px"
-        fixed="right"
-        render={t => (
-          <span>
-          {<img src={t} style={{wdith:"100px",height:"100px"}}></img>}
-          </span>
-      )}
         />
     </Table> 
     );

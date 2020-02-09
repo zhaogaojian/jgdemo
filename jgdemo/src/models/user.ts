@@ -28,7 +28,7 @@ const UserModel = {
             const response = yield call(queryUsers);
             //yield console.log(response.data);
             yield put({
-              type: 'User/updateUserState',
+              type: 'updateUserState',
               payload: response.data,
             });
           }

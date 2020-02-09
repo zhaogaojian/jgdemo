@@ -1,7 +1,7 @@
 import React, { Props } from 'react';
 import { Button, Input } from 'antd';
 import { connect } from 'dva';
-import UserList from './user/components/UserList';
+import UserList from './components/UserList';
 class User extends React.Component {
   constructor(props) {
     super(props);
@@ -41,6 +41,7 @@ class User extends React.Component {
       },
     };
     (this.props as any).dispatch({
+      
       type: 'User/updateUserState',
       payload: userInfo,
     });
