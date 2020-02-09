@@ -17,7 +17,7 @@ const config: IConfig =  {
        routes: [
         { path: '/mainfrm', component: '../pages/user/User' },
         { path: '/mainfrm/user', component: '../pages/user/User' },
-        { path: '/mainfrm/userrole', component: '../pages/user/UserRole' },
+        { path: '/mainfrm/userrole', component: '../pages/userrole/UserRole' },
       ]
     }
     
