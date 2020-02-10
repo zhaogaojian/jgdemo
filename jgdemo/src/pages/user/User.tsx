@@ -2,6 +2,7 @@ import React, { Props } from 'react';
 import { Button, Input } from 'antd';
 import { connect } from 'dva';
 import UserList from './components/UserList';
+import userRoleState from '../userrole/stores/UserRoleState';
 class User extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +14,7 @@ class User extends React.Component {
       <div>
         用户管理
         <div>姓名:{(this.props as any).UserInfo.username}</div>
+        <div>{userRoleState.secend}</div>
         <Button
           type="primary"
           style={{ marginTop: 10, width: 300 }}
@@ -28,6 +30,8 @@ class User extends React.Component {
     );
   }
   handleReadFromSrvClick(e) {
+    userRoleState.add();
+
     (this.props as any).dispatch({
       type: 'User/getUserInfo',
       payload: { id: 1 },
