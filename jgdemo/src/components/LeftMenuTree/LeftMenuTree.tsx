@@ -4,7 +4,7 @@ import router from 'umi/router';
 import Item from 'antd/lib/list/Item';
 const { SubMenu } = Menu;
 class LeftMenuTree extends React.Component {
-  state={list:[{"id":0,"title":"首页","url":"/","children":[]},{"id":1,"title":"权限配置","parentid":0,"children":[{"id":2,"title":"用户管理","url":"/mainfrm/user","parentid":1,"children":[]},{"id":3,"title":"角色管理","url":"/mainfrm/userrole","parentid":1,"children":[]}]}]};
+  state={list:[{"id":0,"title":"首页","url":"/","children":[]},{"id":11,"title":"工作台","url":"/mainfrm/dashboardworkplace","children":[]},{"id":12,"title":"监控页","url":"/mainfrm/dashboardmonitor","children":[]},{"id":1,"title":"权限配置","parentid":0,"children":[{"id":2,"title":"用户管理","url":"/mainfrm/user","parentid":1,"children":[]},{"id":3,"title":"角色管理","url":"/mainfrm/userrole","parentid":1,"children":[]}]}]};
   constructor(props) {
     super(props);
   }
@@ -25,6 +25,10 @@ class LeftMenuTree extends React.Component {
     //this.props.history.push(e.item.props["data-url"]);
     router.push(e.item.props["data-url"]);
   };
+  handleDrag = e => {
+    console.log('drag: ', e);
+    console.log('url:'+e.item.props["data-url"]);
+  };
   //显示菜单列表
   private showMenus(list): React.ReactNode {
     return list.map((item, index) => (
@@ -34,7 +38,7 @@ class LeftMenuTree extends React.Component {
   //显示菜单项
   private showMenu(item: any) {
     if(item.children.length==0)
-    return <Menu.Item key={item.id} onClick={this.handleClick} data-url={item.url}>
+    return <Menu.Item key={item.id} onClick={this.handleClick} onDragCapture={this.handleDrag} data-url={item.url}>
       <Icon type="file" />
       <span>{item.title}{item.id}</span>
     </Menu.Item>

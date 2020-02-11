@@ -8,7 +8,6 @@ const config: IConfig = {
       exact: true,
       component: '../layouts/index',
       routes: [
-        
         {
           path: '/',
           component: '../pages/index',
@@ -19,6 +18,11 @@ const config: IConfig = {
       path: '/mainfrm',
       component: '../layouts/BasicLayout',
       routes: [
+        {
+          name: '监控页',
+          path: '/mainfrm/dashboardmonitor',
+          component: './DashboardMonitor',
+        },
         {
           path: '/mainfrm',
           component: '../pages/user/User',
@@ -40,7 +44,7 @@ const config: IConfig = {
           name: '空白页面',
           path: '/mainfrm/emptypage',
           component: './EmptyPage',
-        }
+        },
       ],
     },
   ],
@@ -54,6 +58,13 @@ const config: IConfig = {
         dynamicImport: false,
         title: 'jgdemo',
         dll: true,
+        locale: {
+          enable: true,
+          // default false
+          default: 'zh-CN',
+          // default zh-CN
+          baseNavigator: true, // default true, when it is true, will use `navigator.language` overwrite default
+        },
         routes: {
           exclude: [
             /models\//,
