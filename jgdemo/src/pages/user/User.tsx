@@ -10,10 +10,11 @@ class User extends React.Component {
   render() {
     console.log('render:');
     console.log(this.props);
+	const userName=(this.props as any).UserInfo.username;
     return (
       <div>
         用户管理
-        <div>姓名:{(this.props as any).UserInfo.username}</div>
+        <div>姓名:{userName}</div>
         <div>{userRoleState.secend}</div>
         <Button
           type="primary"
